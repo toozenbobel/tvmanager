@@ -5,6 +5,10 @@ VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HostTool", "HostTool\HostTool.csproj", "{92D298FF-0EA9-4A1A-9680-4BAD76FD1591}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaPlayerController", "MediaPlayerController\MediaPlayerController.csproj", "{CC138057-8D86-48BC-AD4A-9207A364C7DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interactivity", "Interactivity\Interactivity.csproj", "{8287A013-5C08-4521-80CD-81F171DF5D9B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{92D298FF-0EA9-4A1A-9680-4BAD76FD1591}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92D298FF-0EA9-4A1A-9680-4BAD76FD1591}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92D298FF-0EA9-4A1A-9680-4BAD76FD1591}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC138057-8D86-48BC-AD4A-9207A364C7DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC138057-8D86-48BC-AD4A-9207A364C7DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC138057-8D86-48BC-AD4A-9207A364C7DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC138057-8D86-48BC-AD4A-9207A364C7DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8287A013-5C08-4521-80CD-81F171DF5D9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8287A013-5C08-4521-80CD-81F171DF5D9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8287A013-5C08-4521-80CD-81F171DF5D9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8287A013-5C08-4521-80CD-81F171DF5D9B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
