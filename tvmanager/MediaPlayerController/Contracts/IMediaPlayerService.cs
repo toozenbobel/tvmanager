@@ -1,4 +1,4 @@
-﻿namespace MediaPlayerController
+﻿namespace MediaPlayerController.Contracts
 {
 	public interface IMediaPlayerService
 	{

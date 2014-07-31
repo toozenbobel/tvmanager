@@ -1,6 +1,6 @@
 ﻿using System.ServiceModel;
 
-namespace HostTool.OnlineServices
+namespace Service.OnlineServices
 {
 	[ServiceContract]
 	public interface IManagementService

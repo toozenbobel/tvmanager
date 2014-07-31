@@ -1,4 +1,4 @@
-﻿namespace HostTool.OnlineServices
+﻿namespace Service.OnlineServices
 {
 	public class ManagementService : IManagementService
 	{

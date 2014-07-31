@@ -5,7 +5,7 @@ using System.ServiceModel;
 using System.ServiceModel.Description;
 using System.Text;
 using System.Threading.Tasks;
-using HostTool.OnlineServices;
+using Service.OnlineServices;
 
 namespace HostTool.Tools
 {
@@ -20,7 +20,7 @@ namespace HostTool.Tools
 
 		private void RegisterManagementService()
 		{
-			Uri baseAddress = new Uri("http://localhost:15000/ManagementService");
+			Uri baseAddress = new Uri("http://scylla:15000/ManagementService");
 
 			var host = new ServiceHost(typeof(ManagementService), baseAddress);
 			// Enable metadata publishing.

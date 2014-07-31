@@ -1,10 +1,18 @@
-﻿<Window x:Class="HostTool.MainWindow"
+﻿<Window x:Class="HostTool.Views.MainWindowView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:tb="http://www.hardcodet.net/taskbar"
         Title="MainWindow"
         Width="525"
         Height="350">
 	<Grid>
+		<tb:TaskbarIcon x:Name="trayIcon"
+		                IconSource="/Assets/trayIcon.ico"
+		                MenuActivation="LeftOrRightClick"
+		                Visibility="Visible"
+						LeftClickCommand="{Binding TrayIconLeftClickCommand}"
+						/>
+
 		<Button HorizontalAlignment="Center"
 		        VerticalAlignment="Top"
 		        Click="HostClick"
