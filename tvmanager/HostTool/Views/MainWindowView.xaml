@@ -7,16 +7,9 @@
         Height="350">
 	<Grid>
 		<tb:TaskbarIcon x:Name="trayIcon"
+		                DoubleClickCommand="{Binding ShowMainWindowCommand}"
 		                IconSource="/Assets/trayIcon.ico"
-		                MenuActivation="LeftOrRightClick"
-		                Visibility="Visible"
-						LeftClickCommand="{Binding TrayIconLeftClickCommand}"
-						/>
-
-		<Button HorizontalAlignment="Center"
-		        VerticalAlignment="Top"
-		        Click="HostClick"
-		        Content="Start"
-		        Padding="20,10" />
+		                LeftClickCommand="{Binding ShowMainWindowCommand}"
+		                Visibility="Visible" />
 	</Grid>
 </Window>

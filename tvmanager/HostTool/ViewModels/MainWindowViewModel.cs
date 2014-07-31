@@ -18,7 +18,7 @@ namespace HostTool.ViewModels
 			_windowManager = windowManager;
 		}
 
-		public ICommand TrayIconLeftClickCommand
+		public ICommand ShowMainWindowCommand
 		{
 			get
 			{

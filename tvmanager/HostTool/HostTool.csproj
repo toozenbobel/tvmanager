@@ -71,6 +71,7 @@
     <Compile Include="Caliburn.Micro\ContainerExtensions.cs" />
     <Compile Include="Caliburn.Micro\ExtensionMethods.cs" />
     <Compile Include="Caliburn.Micro\SimpleContainer.cs" />
+    <Compile Include="Init\ServicesStartup.cs" />
     <Compile Include="IShell.cs" />
     <Compile Include="Tools\ServicesHostingManager.cs" />
     <Page Include="Views\MainWindowView.xaml">
