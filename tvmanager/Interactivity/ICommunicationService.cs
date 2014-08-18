@@ -8,6 +8,7 @@ namespace Interactivity
 {
     public interface ICommunicationService
     {
-		// todo: REST service with HttpClient
+	    Task<DefaultResponse> PostCommand(int commandId);
+	    void Initialize(string targetHost, int targetPort);
     }
 }

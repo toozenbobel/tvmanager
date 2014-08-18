@@ -42,7 +42,16 @@
     <Compile Include="Contracts\IPlaybackService.cs" />
     <Compile Include="Contracts\IMediaPlayerService.cs" />
     <Compile Include="Contracts\ISoundControlService.cs" />
+    <Compile Include="Implementation\MediaPlayerService.cs" />
+    <Compile Include="Implementation\PlaybackService.cs" />
+    <Compile Include="Implementation\SoundControlService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Interactivity\Interactivity.csproj">
+      <Project>{8287A013-5C08-4521-80CD-81F171DF5D9B}</Project>
+      <Name>Interactivity</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

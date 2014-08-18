@@ -118,6 +118,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Interactivity\Interactivity.csproj">
+      <Project>{8287A013-5C08-4521-80CD-81F171DF5D9B}</Project>
+      <Name>Interactivity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MediaPlayerController\MediaPlayerController.csproj">
+      <Project>{CC138057-8D86-48BC-AD4A-9207A364C7DB}</Project>
+      <Name>MediaPlayerController</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MvvmTools\MvvmTools.csproj">
       <Project>{E341A34D-7BBE-4CB2-BA1D-F13944A9A044}</Project>
       <Name>MvvmTools</Name>

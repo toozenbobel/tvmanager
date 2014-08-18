@@ -7,5 +7,8 @@ namespace Service.OnlineServices
 	{
 		[OperationContract]
 		string Test(string param);
+
+		[OperationContract]
+		void Play();
 	}
 }

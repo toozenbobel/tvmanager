@@ -20,22 +20,22 @@ namespace Service.OnlineServices
 
 		public void Play()
 		{
-			
+			_playbackService.Play();
 		}
 
 		public void Pause()
 		{
-			
+			_playbackService.Pause();
 		}
 
 		public void PlayPause()
 		{
-			
+			_playbackService.PlayPause();
 		}
 
 		public void Stop()
 		{
-			
+			_playbackService.Stop();
 		}
 
 		#endregion
