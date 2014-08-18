@@ -39,5 +39,10 @@ namespace Service.OnlineServices
 		}
 
 		#endregion
+
+		public string Test(string param)
+		{
+			return param;
+		}
 	}
 }

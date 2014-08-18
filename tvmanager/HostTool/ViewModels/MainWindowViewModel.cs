@@ -22,7 +22,7 @@ namespace HostTool.ViewModels
 		{
 			get
 			{
-				return new RelayCommand(() => _windowManager.ShowWindow(IoC.Get<IShell>()));
+				return new RelayCommand(() => _windowManager.ShowDialog(this));
 			}
 		}
 	}

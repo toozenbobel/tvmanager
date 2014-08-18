@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.ComponentModel;
+using System.Windows;
 using HostTool.Tools;
 
 namespace HostTool.Views
@@ -19,9 +20,17 @@ namespace HostTool.Views
 			manager.StartServices();
 		}
 
-		private void OnTrayPopup(object sender, RoutedEventArgs e)
+		private void ShowWindow(object sender, RoutedEventArgs e)
 		{
 			Show();
+		}
+
+		protected override void OnClosing(CancelEventArgs e)
+		{
+			e.Cancel = true;
+			Hide();
+			
+			base.OnClosing(e);
 		}
 	}
 }
