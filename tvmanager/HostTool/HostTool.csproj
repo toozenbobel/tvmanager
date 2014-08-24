@@ -118,6 +118,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CommonContracts\CommonContracts.csproj">
+      <Project>{77FF57B8-47B7-4896-8421-30132871FF86}</Project>
+      <Name>CommonContracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Interactivity\Interactivity.csproj">
       <Project>{8287A013-5C08-4521-80CD-81F171DF5D9B}</Project>
       <Name>Interactivity</Name>
@@ -134,9 +138,54 @@
       <Project>{2696A452-0155-485B-A665-DCDD1E2EB23E}</Project>
       <Name>Service</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Settings\Settings.csproj">
+      <Project>{3F6426B3-D7B9-49C1-880C-850F4745529A}</Project>
+      <Name>Settings</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\trayIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Player\Lang\mpcresources.br.dll" />
+    <Content Include="Player\Lang\mpcresources.by.dll" />
+    <Content Include="Player\Lang\mpcresources.ca.dll" />
+    <Content Include="Player\Lang\mpcresources.cz.dll" />
+    <Content Include="Player\Lang\mpcresources.de.dll" />
+    <Content Include="Player\Lang\mpcresources.el.dll" />
+    <Content Include="Player\Lang\mpcresources.en-GB.dll" />
+    <Content Include="Player\Lang\mpcresources.es.dll" />
+    <Content Include="Player\Lang\mpcresources.eu.dll" />
+    <Content Include="Player\Lang\mpcresources.fr.dll" />
+    <Content Include="Player\Lang\mpcresources.he.dll" />
+    <Content Include="Player\Lang\mpcresources.hu.dll" />
+    <Content Include="Player\Lang\mpcresources.hy.dll" />
+    <Content Include="Player\Lang\mpcresources.it.dll" />
+    <Content Include="Player\Lang\mpcresources.ja.dll" />
+    <Content Include="Player\Lang\mpcresources.kr.dll" />
+    <Content Include="Player\Lang\mpcresources.nl.dll" />
+    <Content Include="Player\Lang\mpcresources.pl.dll" />
+    <Content Include="Player\Lang\mpcresources.ro.dll" />
+    <Content Include="Player\Lang\mpcresources.ru.dll" />
+    <Content Include="Player\Lang\mpcresources.sc.dll" />
+    <Content Include="Player\Lang\mpcresources.sk.dll" />
+    <Content Include="Player\Lang\mpcresources.sl.dll" />
+    <Content Include="Player\Lang\mpcresources.sv.dll" />
+    <Content Include="Player\Lang\mpcresources.tc.dll" />
+    <Content Include="Player\Lang\mpcresources.tr.dll" />
+    <Content Include="Player\Lang\mpcresources.ua.dll" />
+    <None Include="Player\mediainfo.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Player\mpc-hc.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Player\mpciconlib.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Player\toolbar.bmp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

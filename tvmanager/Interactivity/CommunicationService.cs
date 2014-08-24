@@ -68,5 +68,21 @@ namespace Interactivity
 
 			return new DefaultResponse(HttpStatusCode.NotFound, false, "Response is null");
 		}
+
+		public async Task<DefaultResponse> PostFile(string pathToFile)
+		{
+			if (!EnsureInitialized())
+				return new DefaultResponse(HttpStatusCode.NotFound, false, "Service not initialized");
+
+			string path = string.Format("http://{0}:{1}/browser.html?path={2}", _targetHost, _targetPort, pathToFile);
+
+			var response = await _httpClient.GetAsync(path);
+			if (response != null)
+			{
+				return new DefaultResponse(response.StatusCode, response.IsSuccessStatusCode, null);
+			}
+
+			return new DefaultResponse(HttpStatusCode.NotFound, false, "Response is null");
+		}
 	}
 }

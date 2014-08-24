@@ -10,5 +10,6 @@ namespace Interactivity
     {
 	    Task<DefaultResponse> PostCommand(int commandId);
 	    void Initialize(string targetHost, int targetPort);
+	    Task<DefaultResponse> PostFile(string pathToFile);
     }
 }

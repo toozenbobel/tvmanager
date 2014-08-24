@@ -54,9 +54,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CommonContracts\CommonContracts.csproj">
+      <Project>{77FF57B8-47B7-4896-8421-30132871FF86}</Project>
+      <Name>CommonContracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MediaPlayerController\MediaPlayerController.csproj">
       <Project>{CC138057-8D86-48BC-AD4A-9207A364C7DB}</Project>
       <Name>MediaPlayerController</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Settings\Settings.csproj">
+      <Project>{3F6426B3-D7B9-49C1-880C-850F4745529A}</Project>
+      <Name>Settings</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -10,5 +10,14 @@ namespace Service.OnlineServices
 
 		[OperationContract]
 		void Play();
+
+		[OperationContract]
+		void StartPlayer();
+
+		[OperationContract]
+		void ClosePlayerWindow();
+
+		[OperationContract]
+		void PlayFile(string pathToFile);
 	}
 }

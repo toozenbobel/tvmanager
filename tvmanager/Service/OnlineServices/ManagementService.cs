@@ -1,5 +1,7 @@
 ﻿using Caliburn.Micro;
-using MediaPlayerController.Contracts;
+using CommonContracts.Data;
+using CommonContracts.Services;
+using Settings;
 
 namespace Service.OnlineServices
 {
@@ -36,6 +38,34 @@ namespace Service.OnlineServices
 		public void Stop()
 		{
 			_playbackService.Stop();
+		}
+
+		#endregion
+
+		#region Media Player Service
+
+		public void StartPlayer()
+		{
+			_mediaPlayerService.StartPlayer();
+		}
+
+		public void PlayFile(string pathToFile)
+		{
+			_mediaPlayerService.PlayFile(pathToFile);
+		}
+
+		public void ClosePlayerWindow()
+		{
+			_mediaPlayerService.ClosePlayerWindow();
+		}
+		
+		#endregion
+
+		#region Media Player Settings
+
+		public SettingsBundle GetSettingsBundle()
+		{
+			return null;
 		}
 
 		#endregion

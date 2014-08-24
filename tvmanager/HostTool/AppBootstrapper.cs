@@ -1,11 +1,14 @@
 ﻿using System.Diagnostics;
 using System.Windows;
+using CommonContracts.Models;
+using CommonContracts.Services;
 using HostTool.Init;
 using HostTool.Tools;
 using HostTool.ViewModels;
 using Interactivity;
-using MediaPlayerController.Contracts;
-using MediaPlayerController.Implementation;
+using MediaPlayerController.Model;
+using MediaPlayerController.Services;
+using Settings;
 
 namespace HostTool
 {
@@ -29,6 +32,9 @@ namespace HostTool
 			_container.Singleton<IWindowManager, TrayIconWindowManager>();
 			_container.Singleton<IEventAggregator, EventAggregator>();
 			_container.Singleton<ServicesHostingManager>();
+
+			_container.Singleton<ISettingsModel, SettingsModel>();
+			_container.Singleton<IProcessModel, ProcessModel>();
 
 			_container.Singleton<ICommunicationService, CommunicationService>();
 			_container.Singleton<IMediaPlayerService, MediaPlayerService>();
