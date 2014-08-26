@@ -122,6 +122,10 @@
       <Project>{77FF57B8-47B7-4896-8421-30132871FF86}</Project>
       <Name>CommonContracts</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Filesystem\Filesystem.csproj">
+      <Project>{7F7B8A80-8F08-45BA-A877-54936E53C59F}</Project>
+      <Name>Filesystem</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Interactivity\Interactivity.csproj">
       <Project>{8287A013-5C08-4521-80CD-81F171DF5D9B}</Project>
       <Name>Interactivity</Name>

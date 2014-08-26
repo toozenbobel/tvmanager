@@ -16,6 +16,7 @@ namespace HostTool.Tools
 		public ServicesHostingManager()
 		{
 			RegisterManagementService();
+			RegisterFileSystemService();
 		}
 
 		private void RegisterManagementService()
@@ -23,6 +24,21 @@ namespace HostTool.Tools
 			Uri baseAddress = new Uri("http://scylla:15000/ManagementService");
 
 			var host = new ServiceHost(typeof(ManagementService), baseAddress);
+			// Enable metadata publishing.
+			ServiceMetadataBehavior smb = new ServiceMetadataBehavior();
+
+			smb.HttpGetEnabled = true;
+			smb.MetadataExporter.PolicyVersion = PolicyVersion.Policy15;
+			host.Description.Behaviors.Add(smb);
+
+			_hosts.Add(host);
+		}
+
+		private void RegisterFileSystemService()
+		{
+			Uri baseAddress = new Uri("http://scylla:15001/FilesystemService");
+
+			var host = new ServiceHost(typeof(FileService), baseAddress);
 			// Enable metadata publishing.
 			ServiceMetadataBehavior smb = new ServiceMetadataBehavior();
 

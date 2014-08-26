@@ -40,7 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\RemoteComputer.cs" />
     <Compile Include="Data\SettingsBundle.cs" />
+    <Compile Include="Models\INetworkModel.cs" />
     <Compile Include="Models\IProcessModel.cs" />
     <Compile Include="Models\ISettingsModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

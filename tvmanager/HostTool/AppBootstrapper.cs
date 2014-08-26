@@ -2,6 +2,7 @@
 using System.Windows;
 using CommonContracts.Models;
 using CommonContracts.Services;
+using Filesystem.Models;
 using HostTool.Init;
 using HostTool.Tools;
 using HostTool.ViewModels;
@@ -35,6 +36,7 @@ namespace HostTool
 
 			_container.Singleton<ISettingsModel, SettingsModel>();
 			_container.Singleton<IProcessModel, ProcessModel>();
+			_container.Singleton<INetworkModel, NetworkModel>();
 
 			_container.Singleton<ICommunicationService, CommunicationService>();
 			_container.Singleton<IMediaPlayerService, MediaPlayerService>();

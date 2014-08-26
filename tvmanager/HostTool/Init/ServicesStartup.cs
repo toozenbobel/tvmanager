@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Caliburn.Micro;
+using CommonContracts.Models;
 using HostTool.Tools;
 
 namespace HostTool.Init
@@ -19,6 +20,9 @@ namespace HostTool.Init
 		{
 			var serviceManager = IoC.Get<ServicesHostingManager>();
 			serviceManager.StartServices();
+
+			var networkModel = IoC.Get<INetworkModel>();
+			networkModel.Init();
 		}
 	}
 }
