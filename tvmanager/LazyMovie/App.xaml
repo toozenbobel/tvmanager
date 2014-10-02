@@ -1,0 +1,14 @@
+﻿<Application
+    x:Class="LazyMovie.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:lazyMovie="clr-namespace:LazyMovie">
+
+    <!--Application Resources-->
+    <Application.Resources>
+		<lazyMovie:Bootstrapper x:Key="Bootstrapper" />
+        <local:LocalizedStrings xmlns:local="clr-namespace:LazyMovie" x:Key="LocalizedStrings"/>
+    </Application.Resources>
+
+</Application>

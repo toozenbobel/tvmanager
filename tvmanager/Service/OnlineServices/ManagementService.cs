@@ -70,9 +70,9 @@ namespace Service.OnlineServices
 
 		#endregion
 
-		public string Test(string param)
+		public string Ping()
 		{
-			return param;
+			return "Pong";
 		}
 	}
 }

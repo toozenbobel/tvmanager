@@ -6,7 +6,7 @@ namespace Service.OnlineServices
 	public interface IManagementService
 	{
 		[OperationContract]
-		string Test(string param);
+		string Ping();
 
 		[OperationContract]
 		void Play();

@@ -6,6 +6,7 @@ using System.Management;
 using System.Threading.Tasks;
 using Caliburn.Micro;
 using CommonContracts.Data;
+using CommonContracts.Data.Filesystem;
 using CommonContracts.Models;
 using Filesystem;
 using Filesystem.Network;
@@ -42,11 +43,17 @@ namespace Service.OnlineServices
 			return sharesToRet;
 		}
 
-		public List<string> GetFiles(string path)
+		public FileListing GetFiles(string path)
 		{
-			var files = Directory.GetFileSystemEntries(path);
-			return files.ToList();
-		}
+			var result = new FileListing();
 
+			var directories = Directory.GetDirectories(path);
+			result.Directories = directories.Select(x => new VDirectory() {Name = x}).ToArray();
+
+			var files = Directory.GetFiles(path);
+			result.Files = files.Select(VFile.FromPath).ToArray();
+
+			return result;
+		}
 	}
 }

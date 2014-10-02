@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CommonContracts.Data
+namespace LazyMovie.Models.Interfaces
 {
-	public class RemoteComputer
+	public interface IConnectionModel
 	{
+		Task<bool> TryConnectToSavedHost();
 	}
 }
