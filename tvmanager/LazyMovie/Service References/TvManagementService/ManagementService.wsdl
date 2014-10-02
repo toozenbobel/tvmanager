@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ManagementService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://scylla:15000/ManagementService?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://scylla:15000/ManagementService?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IManagementService_Ping_InputMessage">
+    <wsdl:part name="parameters" element="tns:Ping" />
+  </wsdl:message>
+  <wsdl:message name="IManagementService_Ping_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManagementService_Play_InputMessage">
+    <wsdl:part name="parameters" element="tns:Play" />
+  </wsdl:message>
+  <wsdl:message name="IManagementService_Play_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PlayResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManagementService_StartPlayer_InputMessage">
+    <wsdl:part name="parameters" element="tns:StartPlayer" />
+  </wsdl:message>
+  <wsdl:message name="IManagementService_StartPlayer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StartPlayerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManagementService_ClosePlayerWindow_InputMessage">
+    <wsdl:part name="parameters" element="tns:ClosePlayerWindow" />
+  </wsdl:message>
+  <wsdl:message name="IManagementService_ClosePlayerWindow_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ClosePlayerWindowResponse" />
+  </wsdl:message>
+  <wsdl:message name="IManagementService_PlayFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:PlayFile" />
+  </wsdl:message>
+  <wsdl:message name="IManagementService_PlayFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PlayFileResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IManagementService">
+    <wsdl:operation name="Ping">
+      <wsdl:input wsam:Action="http://tempuri.org/IManagementService/Ping" message="tns:IManagementService_Ping_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IManagementService/PingResponse" message="tns:IManagementService_Ping_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Play">
+      <wsdl:input wsam:Action="http://tempuri.org/IManagementService/Play" message="tns:IManagementService_Play_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IManagementService/PlayResponse" message="tns:IManagementService_Play_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StartPlayer">
+      <wsdl:input wsam:Action="http://tempuri.org/IManagementService/StartPlayer" message="tns:IManagementService_StartPlayer_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IManagementService/StartPlayerResponse" message="tns:IManagementService_StartPlayer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ClosePlayerWindow">
+      <wsdl:input wsam:Action="http://tempuri.org/IManagementService/ClosePlayerWindow" message="tns:IManagementService_ClosePlayerWindow_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IManagementService/ClosePlayerWindowResponse" message="tns:IManagementService_ClosePlayerWindow_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PlayFile">
+      <wsdl:input wsam:Action="http://tempuri.org/IManagementService/PlayFile" message="tns:IManagementService_PlayFile_InputMessage" />
+      <wsdl:output wsam:Action="http://tempuri.org/IManagementService/PlayFileResponse" message="tns:IManagementService_PlayFile_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IManagementService" type="tns:IManagementService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Ping">
+      <soap:operation soapAction="http://tempuri.org/IManagementService/Ping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Play">
+      <soap:operation soapAction="http://tempuri.org/IManagementService/Play" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartPlayer">
+      <soap:operation soapAction="http://tempuri.org/IManagementService/StartPlayer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClosePlayerWindow">
+      <soap:operation soapAction="http://tempuri.org/IManagementService/ClosePlayerWindow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PlayFile">
+      <soap:operation soapAction="http://tempuri.org/IManagementService/PlayFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ManagementService">
+    <wsdl:port name="BasicHttpBinding_IManagementService" binding="tns:BasicHttpBinding_IManagementService">
+      <soap:address location="http://scylla:15000/ManagementService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

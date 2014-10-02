@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Input;
 using Caliburn.Micro;
 using LazyMovie.Models.Interfaces;
 
@@ -34,6 +36,27 @@ namespace LazyMovie.ViewModels
 			else
 			{
 
+			}
+		}
+
+		private string _hostName = "scylla";
+		public string HostName
+		{
+			get { return _hostName; }
+			set
+			{
+				_hostName = value;
+				NotifyOfPropertyChange(() => HostName);
+			}
+		}
+
+		public async void Connect()
+		{
+			if (!string.IsNullOrWhiteSpace(HostName))
+			{
+				var connected = await _connectionModel.Connect(HostName);
+
+				MessageBox.Show(connected ? "Connected!" : "Failed");
 			}
 		}
 

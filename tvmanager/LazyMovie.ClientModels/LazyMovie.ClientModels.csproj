@@ -35,6 +35,10 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
+    <ProjectReference Include="..\LazyMovie.Entities\LazyMovie.Entities.csproj">
+      <Project>{50F3AA14-EA20-433A-AED1-EE91E6C31B1D}</Project>
+      <Name>LazyMovie.Entities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LazyMovie.Models\LazyMovie.Models.csproj">
       <Project>{d7ad1d5c-dcf4-40f3-bad7-a7e5a988bc12}</Project>
       <Name>LazyMovie.Models</Name>
@@ -42,7 +46,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectionModel.cs" />
+    <Compile Include="HostCacheModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.5\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

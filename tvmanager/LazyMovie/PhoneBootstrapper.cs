@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Caliburn.Micro;
+using LazyMovie.ClientModels;
+using LazyMovie.Models;
+using LazyMovie.Models.Interfaces;
 using LazyMovie.ViewModels;
 using Microsoft.Phone.Controls;
 
@@ -25,6 +28,12 @@ namespace LazyMovie
 
 		protected virtual void RegisterIoCServices()
 		{
+			_container.Singleton<IManagementModel, ManagementModel>();
+			_container.Singleton<IConnectionModel, ConnectionModel>();
+			_container.Singleton<IFilesystemModel, FilesystemModel>();
+			_container.Singleton<IHostCacheModel, HostCacheModel>();
+
+			_container.PerRequest<ConnectionViewModel>();
 			_container.PerRequest<MainPageViewModel>();
 		}
 

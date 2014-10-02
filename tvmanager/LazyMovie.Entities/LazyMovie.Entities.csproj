@@ -5,11 +5,11 @@
     <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D7AD1D5C-DCF4-40F3-BAD7-A7E5A988BC12}</ProjectGuid>
+    <ProjectGuid>{50F3AA14-EA20-433A-AED1-EE91E6C31B1D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LazyMovie.Models</RootNamespace>
-    <AssemblyName>LazyMovie.Models</AssemblyName>
+    <RootNamespace>LazyMovie.Entities</RootNamespace>
+    <AssemblyName>LazyMovie.Entities</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -35,16 +35,9 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
-    <ProjectReference Include="..\LazyMovie.Entities\LazyMovie.Entities.csproj">
-      <Project>{50F3AA14-EA20-433A-AED1-EE91E6C31B1D}</Project>
-      <Name>LazyMovie.Entities</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\IConnectionModel.cs" />
-    <Compile Include="Interfaces\IFilesystemModel.cs" />
-    <Compile Include="Interfaces\IHostCacheModel.cs" />
-    <Compile Include="Interfaces\IManagementModel.cs" />
+    <Compile Include="SavedHost.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

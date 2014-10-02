@@ -95,7 +95,17 @@
     </Compile>
     <Compile Include="AppBootstrapper.cs" />
     <Compile Include="LocalizedStrings.cs" />
+    <Compile Include="Models\FilesystemModel.cs" />
+    <Compile Include="Models\ManagementModel.cs" />
+    <Compile Include="Service References\TvManagementService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\ConnectionViewModel.cs" />
+    <Compile Include="Views\ConnectionView.xaml.cs">
+      <DependentUpon>ConnectionView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainPageView.xaml.cs">
       <DependentUpon>MainPageView.xaml</DependentUpon>
     </Compile>
@@ -113,6 +123,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Page Include="Views\ConnectionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainPageView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -124,6 +138,14 @@
     <None Include="Properties\WMAppManifest.xml">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\TvManagementService\ManagementService.wsdl" />
+    <None Include="Service References\TvManagementService\ManagementService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TvManagementService\ManagementService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="ServiceReferences.ClientConfig" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\AlignmentGrid.png" />
@@ -145,6 +167,13 @@
     <Content Include="Assets\Tiles\IconicTileSmall.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Service References\TvManagementService\ManagementService.disco" />
+    <None Include="Service References\TvManagementService\configuration91.svcinfo" />
+    <None Include="Service References\TvManagementService\configuration.svcinfo" />
+    <None Include="Service References\TvManagementService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
@@ -176,13 +205,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\LazyMovie.ClientModels\LazyMovie.ClientModels.csproj">
+      <Project>{77113CC3-8203-4CCD-896D-0351AB7CC29A}</Project>
+      <Name>LazyMovie.ClientModels</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LazyMovie.Models\LazyMovie.Models.csproj">
       <Project>{D7AD1D5C-DCF4-40F3-BAD7-A7E5A988BC12}</Project>
       <Name>LazyMovie.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\TvManagementService\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
