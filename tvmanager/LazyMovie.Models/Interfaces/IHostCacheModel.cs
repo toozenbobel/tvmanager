@@ -11,5 +11,6 @@ namespace LazyMovie.Models.Interfaces
 	{
 		Task<IEnumerable<SavedHost>> GetHosts();
 		Task SaveHosts(IEnumerable<SavedHost> hosts);
+		Task TryCacheHost(string hostAddress);
 	}
 }

@@ -23,11 +23,18 @@ namespace LazyMovie.ViewModels
 		{
 			base.OnActivate();
 
-			IsConnecting = true;
+			bool connected = false;
 
-			var connected = await _connectionModel.TryConnectToSavedHost();
+			var lastHost = await _connectionModel.GetLastHost();
+			if (lastHost != null)
+			{
+				IsConnecting = true;
 
-			IsConnecting = false;
+				HostName = lastHost.Host;
+				connected = await _connectionModel.TryConnectToSavedHost();
+
+				IsConnecting = false;
+			}
 
 			if (connected)
 			{
@@ -39,7 +46,7 @@ namespace LazyMovie.ViewModels
 			}
 		}
 
-		private string _hostName = "scylla";
+		private string _hostName;
 		public string HostName
 		{
 			get { return _hostName; }

@@ -8,14 +8,6 @@ using LazyMovie.TvManagementService;
 
 namespace LazyMovie.Models
 {
-	internal static class CallbackExtenstions
-	{
-		public static bool IsOk(this AsyncCompletedEventArgs args)
-		{
-			return args != null && args.Error == null;
-		}
-	}
-
 	internal class ManagementModel : IManagementModel
 	{
 		private readonly TimeSpan _timeout = TimeSpan.FromSeconds(30);
@@ -57,7 +49,6 @@ namespace LazyMovie.Models
 			var httpBinding = new BasicHttpBinding();
 			httpBinding.OpenTimeout = _timeout;
 			httpBinding.SendTimeout = _timeout;
-
 
 			_client = new ManagementServiceClient(httpBinding, new EndpointAddress(hostAddress));
 

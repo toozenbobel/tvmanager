@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Threading.Tasks;
 using LazyMovie.Entities;
 using LazyMovie.Models.Interfaces;
@@ -44,6 +45,21 @@ namespace LazyMovie.ClientModels
 		{
 			string json = JsonConvert.SerializeObject(hosts);
 			await _filesystemModel.WriteTextToFile(HOSTS_FILENAME, json);
+		}
+
+		public async Task TryCacheHost(string hostAddress)
+		{
+			var hosts = await GetHosts() ?? new List<SavedHost>();
+			var savedHosts = hosts as IList<SavedHost> ?? hosts.ToList();
+			var savedHost = savedHosts.FirstOrDefault(x => x.Host == hostAddress);
+			if (savedHost == null)
+			{
+				var newHost = new SavedHost();
+				newHost.Id = savedHosts.Count();
+				newHost.Host = hostAddress;
+
+				await SaveHosts(savedHosts.Union(new[] { newHost } ));
+			}
 		}
 	}
 }

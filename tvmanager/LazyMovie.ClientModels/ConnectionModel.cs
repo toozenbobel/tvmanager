@@ -26,6 +26,8 @@ namespace LazyMovie.ClientModels
 	    {
 			var toConnect = string.Format("http://{0}:{1}/ManagementService", host, DEFAULT_PORT);
 
+			TryAddHostToCache(host);
+
 			var error = await _managementModel.Connect(toConnect);
 			if (error == null)
 			{
@@ -39,7 +41,18 @@ namespace LazyMovie.ClientModels
 			return false;
 	    }
 
-	    protected async Task<bool> IsHostSaved()
+		public async Task<SavedHost> GetLastHost()
+		{
+			var hosts = await _hostCacheModel.GetHosts();
+			if (hosts != null)
+			{
+				return hosts.LastOrDefault();
+			}
+
+			return null;
+		}
+
+		protected async Task<bool> IsHostSaved()
 	    {
 		    _hosts = await _hostCacheModel.GetHosts();
 			return _hosts != null && _hosts.Any();
@@ -56,5 +69,10 @@ namespace LazyMovie.ClientModels
 
 		    return false;
 	    }
+
+		private async void TryAddHostToCache(string hostAddress)
+		{
+			await _hostCacheModel.TryCacheHost(hostAddress);
+		}
     }
 }
