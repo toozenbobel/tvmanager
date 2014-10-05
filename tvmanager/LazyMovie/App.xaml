@@ -1,14 +1,19 @@
-﻿<Application
-    x:Class="LazyMovie.App"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
-    xmlns:lazyMovie="clr-namespace:LazyMovie">
+﻿<Application x:Class="LazyMovie.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:lazyMovie="clr-namespace:LazyMovie"
+             xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone">
 
-    <!--Application Resources-->
-    <Application.Resources>
-		<lazyMovie:Bootstrapper x:Key="Bootstrapper" />
-        <local:LocalizedStrings xmlns:local="clr-namespace:LazyMovie" x:Key="LocalizedStrings"/>
-    </Application.Resources>
+	<!--  Application Resources  -->
+	<Application.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="CommonResources/DesignResources.xaml" />
+			</ResourceDictionary.MergedDictionaries>
+			<lazyMovie:Bootstrapper x:Key="Bootstrapper" />
+			<local:LocalizedStrings xmlns:local="clr-namespace:LazyMovie" x:Key="LocalizedStrings" />
+		</ResourceDictionary>
+
+	</Application.Resources>
 
 </Application>
